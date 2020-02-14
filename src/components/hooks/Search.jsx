@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState,useContext,useRef} from 'react';
 import Axios from 'axios';
 import SearchButton from '../Search Button';
+import {AppContext} from '../../context/AppContext';
 
 const Search = () => {
 
@@ -8,6 +9,8 @@ const Search = () => {
     //declaring state variables
     const[searchKey,setSearchKey] = useState("");
     const[results,setResults] = useState([]);
+    const context = useContext(AppContext);
+    const btnRef = useRef(null);
 
    
      const change = (evt) => setSearchKey(evt.target.value);
@@ -50,11 +53,16 @@ const Search = () => {
     
   return (
          <div>
-               <h3>Wiki Search </h3>
+               <h3>Wiki Search </h3> <div>
+                  <p>App name : {context.appName} </p>
+                  <p> User Name : {context.userName}</p> 
+
+               </div>
                <input type = "search" placeholder = "Search" 
                value ={searchKey} onChange= {change}/>
                <p>Search results for {searchKey}</p>
                <br/>
+                 <SearchButton onClick={search} ref={btnRef} />
                  <SearchButton onClick={search} >Find</SearchButton>
                  <SearchButton onClick={search} title="Lookup"/>
                <div>

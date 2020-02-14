@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Tests snapshot 1`] = `
+<div>
+  <p>
+    Counter : 
+    Testing Counter
+     -- 
+    10
+  </p>
+  <p>
+    This is a react class component
+  </p>
+  <div>
+    <p>
+      App name : 
+      Training
+    </p>
+    <p>
+      User name : 
+      Anil
+    </p>
+  </div>
+  <button
+    id="inc"
+    onClick={[Function]}
+  >
+    Increment
+  </button>
+    
+  <button
+    onClick={[Function]}
+  >
+     Decrement
+  </button>
+  <div>
+    count: 
+    <input
+      onChange={[Function]}
+      type="number"
+      value={10}
+    />
+    <div>
+      count: 
+      <input
+        type="number"
+      />
+        
+      <button
+        onClick={[Function]}
+      >
+        Update
+      </button>
+    </div>
+  </div>
+</div>
+`;

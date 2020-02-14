@@ -3,7 +3,7 @@ import './SearchButton.css';
 
 
 
-const SearchButton = (props) =>{
+const SearchButton = React.forwardRef((props,ref) =>{
 
 
    const {title,...otherProps} = props; 
@@ -20,10 +20,10 @@ const SearchButton = (props) =>{
 
     return(
 
-    <button className= "search" {...otherProps}>{getText()}</button>
+    <button ref={ref} className= "search" {...otherProps}>{getText()}</button>
     );
 
-}
+});
 
 
 export default SearchButton;

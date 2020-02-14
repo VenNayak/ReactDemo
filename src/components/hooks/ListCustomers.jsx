@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,Fragment} from 'react';
 import Axios from 'axios';
 import {Customer} from '../../model/Customer';
 import '../ListCustomer.css';
@@ -7,7 +7,7 @@ import SimpleHOC from '../SimpleHOC';
 import {Link} from 'react-router-dom';
 import CustomerView from './CustomerView';
 import {useCallback} from 'react';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ListCustomers = (props) => {
 
@@ -95,6 +95,7 @@ const ListCustomers = (props) => {
     return(
             <div>
             <h2> List Customer with Hooks </h2>
+            {loaded  ? <Fragment>
             
                 <div>
                         <a href="#" onClick={(evt)=>addNew(evt)} >Add New</a>
@@ -106,8 +107,9 @@ const ListCustomers = (props) => {
                     }
                     
                 </div>
-                
 
+            
+                </Fragment> : <CircularProgress/>}
             </div>
         );
 
